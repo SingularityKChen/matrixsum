@@ -5,7 +5,7 @@ import freechips.rocketchip.config.{Field, Parameters}
 //import freechips.rocketchip.tile.HasCoreParameters
 //import freechips.rocketchip.rocket.{HellaCacheReq, MStatus, PRV, TLB, TLBConfig, TLBPTWIO}
 //import freechips.rocketchip.diplomacy._
-import freechips.rocketchip.tilelink._
+//import freechips.rocketchip.tilelink._
 
 class SCacheModule(val W: Int)(implicit p: Parameters) extends Module {
 
@@ -37,6 +37,14 @@ class SCacheModule(val W: Int)(implicit p: Parameters) extends Module {
     when(io.resp_rdy){ 
       col_particular_sum.write(io.index, io.resp_data + col_particular_sum.read(io.index)) //we need to write it back after plus the original one and the new coming one
     }
+  }
+
+  when(io.init) {
+    for (i <- 0 until W - 1){
+      row_particular_sum.write(i.U, 0.U)
+      col_particular_sum.write(i.U, 0.U)
+    }
+    
   }
 }
 
