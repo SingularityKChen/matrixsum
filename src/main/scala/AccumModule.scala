@@ -18,7 +18,7 @@ class AccumModule(val W: Int)(implicit val p: Parameters) extends Module {
   })
   val accum_sum = RegInit(0.U((W+1).W)) //a bit more to indicate overflow
   val overflow_reg = RegInit(false.B)
-  overflow_reg := !accum_sum(W) //if the highest bit in accum_sum is one, means overflow
+  overflow_reg := accum_sum(W) //if the highest bit in accum_sum is one, means overflow
   accum_sum := accum_sum + io.req_data
   io.resp_data := Mux(overflow_reg, overflow_dmem_data.U(W.W), accum_sum)
   io.overflow := overflow_reg

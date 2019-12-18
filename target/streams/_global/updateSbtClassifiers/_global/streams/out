@@ -1,0 +1,4 @@
+[warn] insecure HTTP request is deprecated 'Patterns(ivyPatterns=Vector(http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false)'; switch to HTTPS or opt-in as Resolver.url("scalasbt", url(...)).withAllowInsecureProtocol(true)
+[warn] insecure HTTP request is deprecated 'http://download.eclipse.org/jgit/maven'; switch to HTTPS or opt-in as ("jgit-repo" at "http://download.eclipse.org/jgit/maven").withAllowInsecureProtocol(true)
+[debug] Other repositories:
+[debug] Default repositories:

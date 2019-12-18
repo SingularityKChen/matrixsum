@@ -1,0 +1,293 @@
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/AccumModule.scala:4:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.config.{Field, Parameters}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/AccumModule.scala:10:47: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass AccumModule(val W: Int)(implicit val p: Parameters) extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:6:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.tile.HasCoreParameters[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:7:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.rocket.constants.MemoryOpConstants[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:8:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.config._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:14:8: not found: type HasCoreParameters[0m
+[0m[[0m[31merror[0m] [0m[0m  with HasCoreParameters[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:15:8: not found: type MemoryOpConstants[0m
+[0m[[0m[31merror[0m] [0m[0m  with MemoryOpConstants {[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:13:46: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass CtrlModule(val W: Int)(implicit val p: Parameters) extends Module[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:38:42: not found: value dcacheReqTagBits[0m
+[0m[[0m[31merror[0m] [0m[0m    val dmem_req_tag      = Bits(OUTPUT, dcacheReqTagBits)[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:39:42: not found: value coreMaxAddrBits[0m
+[0m[[0m[31merror[0m] [0m[0m    val dmem_req_addr     = Bits(OUTPUT, coreMaxAddrBits) //send dmem the data address to store the data[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:41:42: not found: value M_SZ[0m
+[0m[[0m[31merror[0m] [0m[0m    val dmem_req_cmd      = Bits(OUTPUT, M_SZ)[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:42:51: not found: value coreDataBytes[0m
+[0m[[0m[31merror[0m] [0m[0m    val dmem_req_size     = Bits(OUTPUT, log2Ceil(coreDataBytes + 1))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:213:71: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          send_memory_matrix_position := PriorityEncoder(col_no_index & not_send_memory_matrix_positions) //find the first index whose value is "1", which means hasn't caculated before in this variable. So we need to read its data[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:214:109: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          next_element_addr := matrix_start_addr + (matrix_size*matrix_index + PriorityEncoder(col_no_index & not_send_memory_matrix_positions))*W//the address the first index which is one(in this variable, that means hasn't asked for element data)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:215:56: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          not_receive_matrix_positions := col_no_index & not_receive_matrix_positions //if we have done some column sums, then we can save some read requirements[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:216:60: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          not_send_memory_matrix_positions := col_no_index & not_send_memory_matrix_positions //if we have done some column sums, then we can save some read requirements[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:218:17: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m          when(!col_no_index(matrix_size - 1,0).reduce(_ && _)){ //if the Accelerator has done some column sum[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:235:71: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          send_memory_matrix_position := PriorityEncoder(row_no_index & not_send_memory_matrix_positions) //find the first index whose value is "1", which means hasn't caculated before in this variable. So we need to read its data FIXME: rewrite the module[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:236:97: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          next_element_addr := matrix_start_addr + (matrix_index + PriorityEncoder(row_no_index & not_send_memory_matrix_positions)*matrix_size)*W // the address of the first index which is one(in this variable, that means hasn't asked for element data)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:237:56: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          not_receive_matrix_positions := row_no_index & not_receive_matrix_positions //if we have done some column sums, then we can save some read requirements[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:238:60: value & is not a member of Chisel.Vec[Chisel.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m          not_send_memory_matrix_positions := row_no_index & not_send_memory_matrix_positions //if we have done some column sums, then we can save some read requirements[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:240:17: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m          when(!row_no_index(matrix_size - 1,0).reduce(_&&_)){//if the Accelerator has done some row sum[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:278:45: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      io.dmem_req_val := ask_memory_read && not_send_memory_matrix_positions(matrix_size - 1,0).reduce(_||_)//ask for data when we need to read and there is any elements haven't send read FIXME[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:283:51: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      when(dmem_req_rdy_reg && ask_memory_read && not_send_memory_matrix_positions(matrix_size - 1,0).reduce(_||_)){ //FIXME[0m
+[0m[[0m[31merror[0m] [0m[0m                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:298:13: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      when(!not_send_memory_matrix_positions(matrix_size - 1,0).reduce(_||_)){ //if we don't need to ask memory for any data[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:304:13: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      when(!not_send_memory_matrix_positions(matrix_size - 1,0).reduce(_||_)) { // all the elements have asked for data FIXME: use for loop to do that[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:334:31: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (dir: Chisel.Direction)Chisel.UInt <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (value: BigInt)Chisel.UInt <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (n: String)Chisel.UInt <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (range: chisel3.internal.firrtl.IntervalRange)chisel3.UInt <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (width: chisel3.internal.firrtl.Width)chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Double)[0m
+[0m[[0m[31merror[0m] [0m[0m          io.dmem_req_data := UInt(overflow_dmem_data)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:356:38: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      when(mem_state === mem_read && not_send_submodules_matrix_positions(matrix_size - 1, 0).reduce(_||_) && dmem_resp_val_reg){ //if Accelerator has asked for any data and hasn't send all data to submodules, also received memory's valid signal, coming new data[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:359:19: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      }.elsewhen(!not_send_submodules_matrix_positions(matrix_size - 1, 0).reduce(_||_)){ //if we have send all the data to submodules, hence can get the final results[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/CtrlModule.scala:378:13: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (idx: Int)Chisel.Bool <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (p: chisel3.UInt)Chisel.Bool[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m      when(!not_send_submodules_matrix_positions(matrix_size - 1,0).reduce(_||_)){ //if we have send all the data to submodules, hence can get the final results[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:4:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.config.{Field, Parameters}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:5:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.tile.HasCoreParameters[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:6:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.rocket.{HellaCacheReq, TLB, TLBPTWIO, TLBConfig, MStatus, PRV}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:7:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.diplomacy._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:8:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.tilelink._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:10:34: not found: type Field[0m
+[0m[[0m[31merror[0m] [0m[0mcase object MatrixSumTLB extends Field[Option[TLBConfig]](None)[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:10:59: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mcase object MatrixSumTLB extends Field[Option[TLBConfig]](None)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:12:50: not found: type LazyModule[0m
+[0m[[0m[31merror[0m] [0m[0mclass DmemModule(implicit p: Parameters) extends LazyModule {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:12:30: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass DmemModule(implicit p: Parameters) extends LazyModule {[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:19:72: not found: type LazyModuleImp[0m
+[0m[[0m[31merror[0m] [0m[0mclass DmemModuleImp(outer: DmemModule)(implicit p: Parameters) extends LazyModuleImp(outer)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:20:8: not found: type HasCoreParameters[0m
+[0m[[0m[31merror[0m] [0m[0m  with HasCoreParameters { [0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:19:52: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass DmemModuleImp(outer: DmemModule)(implicit p: Parameters) extends LazyModuleImp(outer)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:14:14: not found: value TLClientNode[0m
+[0m[[0m[31merror[0m] [0m[0m  val node = TLClientNode(Seq(TLClientPortParameters(Seq(TLClientParameters("MATRIXSUM")))))  //???[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:14:31: not found: value TLClientPortParameters[0m
+[0m[[0m[31merror[0m] [0m[0m  val node = TLClientNode(Seq(TLClientPortParameters(Seq(TLClientParameters("MATRIXSUM")))))  //???[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:14:58: not found: value TLClientParameters[0m
+[0m[[0m[31merror[0m] [0m[0m  val node = TLClientNode(Seq(TLClientPortParameters(Seq(TLClientParameters("MATRIXSUM")))))  //???[0m
+[0m[[0m[31merror[0m] [0m[0m                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:19:86: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass DmemModuleImp(outer: DmemModule)(implicit p: Parameters) extends LazyModuleImp(outer)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:22:12: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m  val io = IO(new Bundle {[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:24:29: not found: type HellaCacheReq[0m
+[0m[[0m[31merror[0m] [0m[0m    val req = Decoupled(new HellaCacheReq).flip[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:25:29: not found: type HellaCacheReq[0m
+[0m[[0m[31merror[0m] [0m[0m    val mem = Decoupled(new HellaCacheReq)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:26:19: not found: type TLBPTWIO[0m
+[0m[[0m[31merror[0m] [0m[0m    val ptw = new TLBPTWIO[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:27:28: not found: type MStatus[0m
+[0m[[0m[31merror[0m] [0m[0m    val status = Valid(new MStatus).flip  //???[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:33:6: value a is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m  tl.a.valid := Bool(false)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:34:6: value b is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m  tl.b.ready := Bool(true)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:35:6: value c is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m  tl.c.valid := Bool(false)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:36:6: value d is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m  tl.d.ready := Bool(true)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:37:6: value e is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m  tl.e.valid := Bool(false)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:39:24: not found: type MStatus[0m
+[0m[[0m[31merror[0m] [0m[0m  val status = Reg(new MStatus) //rocket/CSR.scala[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:45:24: not found: type TLB[0m
+[0m[[0m[31merror[0m] [0m[0m  val tlb = Module(new TLB(false, log2Ceil(coreDataBytes), p(MatrixSumTLB).get)(edge, p)) //rocket/TLB.scala    TLB: Translation Lookaside Buffer[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/DmemModule.scala:45:44: not found: value coreDataBytes[0m
+[0m[[0m[31merror[0m] [0m[0m  val tlb = Module(new TLB(false, log2Ceil(coreDataBytes), p(MatrixSumTLB).get)(edge, p)) //rocket/TLB.scala    TLB: Translation Lookaside Buffer[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:4:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.tile._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:5:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.config._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:6:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.diplomacy._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:7:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.rocket.{TLBConfig, HellaCacheReq}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:9:37: not found: type Field[0m
+[0m[[0m[31merror[0m] [0m[0mcase object MatrixSumWidthP extends Field[Int][0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:17:69: not found: type LazyRoCC[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSum(opcodes: OpcodeSet)(implicit p: Parameters) extends LazyRoCC([0m
+[0m[[0m[31merror[0m] [0m[0m                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:17:26: not found: type OpcodeSet[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSum(opcodes: OpcodeSet)(implicit p: Parameters) extends LazyRoCC([0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:17:49: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSum(opcodes: OpcodeSet)(implicit p: Parameters) extends LazyRoCC([0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:18:13: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mNote that 'opcodes', 'nPTWPorts' are not parameter names of the invoked method.[0m
+[0m[[0m[31merror[0m] [0m[0m    opcodes = opcodes, nPTWPorts = if (p(MatrixSumTLB).isDefined) 1 else 0) {[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:27:70: not found: type LazyRoCCModuleImp[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSumImp(outer: MatrixSum)(implicit p: Parameters) extends LazyRoCCModuleImp(outer) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:27:50: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSumImp(outer: MatrixSum)(implicit p: Parameters) extends LazyRoCCModuleImp(outer) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:27:88: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass MatrixSumImp(outer: MatrixSum)(implicit p: Parameters) extends LazyRoCCModuleImp(outer) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:34:6: object cmd is not a member of package io[0m
+[0m[[0m[31merror[0m] [0m[0m  io.cmd.ready := ctrl.io.rocc_req_rdy[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:39:6: object busy is not a member of package io[0m
+[0m[[0m[31merror[0m] [0m[0m  io.busy := ctrl.io.busy[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:42:42: not found: type HellaCacheReq[0m
+[0m[[0m[31merror[0m] [0m[0m  private def dmem_ctrl(req: DecoupledIO[HellaCacheReq]) { //required by dmem, connections between DmemModule and CtrlModule[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:56:20: value module is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m      val dmem = m.module[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:58:10: object mem is not a member of package io[0m
+[0m[[0m[31merror[0m] [0m[0m      io.mem.req <> dmem.io.mem // the dmem module control the require part[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:59:10: object ptw is not a member of package io[0m
+[0m[[0m[31merror[0m] [0m[0m      io.ptw.head <> dmem.io.ptw[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:65:31: object mem is not a member of package io[0m
+[0m[[0m[31merror[0m] [0m[0m    case None => dmem_ctrl(io.mem.req)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/SCacheModule.scala:4:8: not found: object freechips[0m
+[0m[[0m[31merror[0m] [0m[0mimport freechips.rocketchip.config.{Field, Parameters}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/SCacheModule.scala:10:44: not found: type Parameters[0m
+[0m[[0m[31merror[0m] [0m[0mclass SCacheModule(val W: Int)(implicit p: Parameters) extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:97:29: not found: type Config[0m
+[0m[[0m[31merror[0m] [0m[0mclass WithMatrixSum extends Config ((site, here, up) => {[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/MatrixSum.scala:97:54: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass WithMatrixSum extends Config ((site, here, up) => {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/SCacheModule.scala:24:28: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](size: Int, t: T)chisel3.SyncReadMem[T] <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](size: BigInt, t: T)chisel3.SyncReadMem[T][0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m  val row_particular_sum = SyncReadMem(UInt(W.W), 31) //to store W-bit particular sums produced during row sum caculation. [0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/singularity/matrixsum/src/main/scala/SCacheModule.scala:25:28: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](size: Int, t: T)chisel3.SyncReadMem[T] <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](size: BigInt, t: T)chisel3.SyncReadMem[T][0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, Int)[0m
+[0m[[0m[31merror[0m] [0m[0m  val col_particular_sum = SyncReadMem(UInt(W.W), 31) //to store W-bit particular sums produced during column sum caculation. [0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m84 errors found[0m

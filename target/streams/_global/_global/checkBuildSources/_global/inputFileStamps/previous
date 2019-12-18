@@ -1,0 +1,1 @@
+["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/home/singularity/matrixsum/build.sbt","657d31a6c9d4a27246f1a09da9d0b429b13574a9"],["/home/singularity/matrixsum/project/plugins.sbt","3257f0556e339ed77817e4e59322a1534c574e62"]],"lastModifiedTimes":[]}]
